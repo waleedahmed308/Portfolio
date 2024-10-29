@@ -2,26 +2,77 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
   }
 }
 
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
-}
-
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
+@keyframes blink {
+  50% {
+    border-color: transparent;
+  }
+  100% {
+    border-color: #C778DD;
   }
 }
+
+.typing-effect {
+  display: inline-block; /* Allows width to animate */
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 2px solid #C778DD; /* Cursor effect */
+  width: 0; /* Start with width 0 */
+  animation: typing 3.5s steps(30, end) forwards infinite, blink 0.75s step-end infinite;
+}
+
+
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .fade-in {
+    animation: fadeIn 2s ease-in-out;
+    animation-iteration-count: infinite;
+  }
+
+
+  .button {
+    position: relative;
+    padding: 10px 20px; /* Adjust padding as needed */
+    font-size: 16px; /* Adjust font size as needed */
+    color: #fff;
+    border: none;
+    border-radius: 25px; /* Round shape */
+    cursor: pointer;
+    overflow: hidden;
+  }
+  
+  .button::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 100%;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.2); 
+    border-radius: 25px; /* Same round shape */
+    transform: translate(-100%, -50%); /* Position the border */
+    transition: transform 0.3s ease; /* Smooth movement */
+  }
+  
+  .button:hover::after {
+    transform: translate(0, -50%); /* Move border on hover */
+  }
+  
+
