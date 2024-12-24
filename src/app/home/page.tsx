@@ -96,8 +96,8 @@ export default function BackgroundBeamsWithCollisionDemo() {
       ),
     },
     {
-      name: "Projects",
-      targetId: "projects",
+      name: "Work",
+      targetId: "work",
       icon: (
         <GrProjects className="h-4 w-4 text-neutral-500 dark:text-white" />
       ),
@@ -288,7 +288,7 @@ export default function BackgroundBeamsWithCollisionDemo() {
           </div>
         </div>
       </BackgroundBeamsWithCollision>
-      <h1 className="md:text-5xl px-20 font-bold mt-10" id="projects">Projects</h1>
+      <h1 className="md:text-5xl px-20 font-bold mt-10" id="work">Projects</h1>
       <div className="max-w-5xl mx-auto px-8 ">
         <HoverEffect items={projects} />
       </div>

@@ -74,5 +74,3 @@
   .button:hover::after {
     transform: translate(0, -50%); /* Move border on hover */
   }
-  
-
